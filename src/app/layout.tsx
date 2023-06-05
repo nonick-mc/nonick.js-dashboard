@@ -13,6 +13,7 @@ const description = 'Discordサーバーの管理をサポートする多機能B
 const url = 'https://nonick-js.com';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(url),
   title: {
     default: siteName,
     template: `%s - ${siteName}`,
