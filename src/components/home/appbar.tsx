@@ -51,17 +51,14 @@ export default function Appbar() {
           </NavbarItem>
         </div>
         <NavbarItem className='max-md:hidden'>
-          <Popover>
-            <PopoverTrigger>
-              <Button color='primary' variant='flat'>
-                ダッシュボード
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent>
-              現在開発中です！<br/>
-              公開までお待ち下さい🙏
-            </PopoverContent>
-          </Popover>
+          <Button
+            as={Link}
+            href='/dashboard'
+            color='primary'
+            variant='flat'
+          >
+            ダッシュボード
+          </Button>
         </NavbarItem>
       </NavbarContent>
     </Navbar>
