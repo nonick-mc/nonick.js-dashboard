@@ -1,8 +1,8 @@
 import { GitHub, Icon, Twitter } from 'react-feather';
 
-interface AppBarConfigType {
+interface AppbarConfig {
   links: Link[],
-  linkButtons: LinkButton[],
+  socials: LinkButton[],
 }
 
 interface Link {
@@ -16,15 +16,15 @@ interface LinkButton {
   icon: Icon,
 }
 
-const AppBarConfig: AppBarConfigType = {
+const appbarConfig: AppbarConfig = {
   links: [
     { name: 'Home', href: '/' },
     { name: 'Docs', href: 'https://nonick-js.com' }
   ],
-  linkButtons: [
+  socials: [
     { label: 'Twitter', href: 'https://twitter.com/nonick_js', icon: Twitter },
     { label: 'GitHub', href: 'https://github.com/nonick-js', icon: GitHub },
   ]
 }
 
-export default AppBarConfig;
+export default appbarConfig;

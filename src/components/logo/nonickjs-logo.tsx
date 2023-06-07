@@ -5,7 +5,7 @@ interface Props {
   height: number,
 }
 
-export default function Logo({ width, height }: Props) {
+export default function NoNICKjsLogo({ width, height }: Props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

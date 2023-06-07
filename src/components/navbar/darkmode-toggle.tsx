@@ -5,7 +5,7 @@ import { Button } from '@nextui-org/react';
 import { Moon, Sun } from 'react-feather';
 import { useEffect, useState } from 'react';
 
-export default function ToggleDarkMode() {
+export default function DarkModeToggle() {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 

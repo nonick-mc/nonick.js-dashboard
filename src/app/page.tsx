@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Appbar from '@/components/home/appbar';
-import Footer from '@/components/home/footer';
+import { HomeNavbar } from '@/components/navbar/navbar';
+import Footer from '@/components/footer/footer';
 import homePageConfig from '@/config/homePage';
-import { IconCard } from '@/components/home/cards';
+import { WithIconCard } from '@/components/card/withicon';
 import { ArrowRight, Book, MessageCircle, MoreHorizontal, Table } from 'react-feather';
 
 import { Button } from '@nextui-org/button';
@@ -14,7 +14,7 @@ import { Card, CardBody, CardFooter, CardHeader } from '@nextui-org/card';
 export default function Page() {
   return (
     <main>
-      <Appbar />
+      <HomeNavbar />
       <div className='max-w-screen-xl mx-auto px-6'>
         <div className='my-20 lg:my-28 flex flex-col gap-4 justify-center text-center'>
           <Image
@@ -96,7 +96,7 @@ export default function Page() {
           </div>
           <div className='py-4 grid grid-cols-1 lg:grid-cols-3 gap-3 items-stretch'>
             {homePageConfig.appeal.map((props, index) => (
-              <IconCard key={index} {...props}/>
+              <WithIconCard key={index} {...props}/>
             ))}
           </div>
           <div className='flex flex-col lg:flex-row gap-2 my-4 p-4 md:p-8 items-center rounded-lg bg-gradient-to-r from-violet-600 to-indigo-600'>
@@ -186,7 +186,7 @@ export default function Page() {
           </div>
           <div className='py-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 items-stretch'>
             {homePageConfig.feature.map((props, index) => (
-              <IconCard key={index} {...props}/>
+              <WithIconCard key={index} {...props}/>
             ))}
           </div>
           <Card

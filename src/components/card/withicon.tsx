@@ -1,20 +1,20 @@
-import { Card, CardBody, CardHeader } from '@nextui-org/card';
 import React from 'react';
 import { Icon } from 'react-feather';
+import { Card, CardBody, CardHeader } from '@nextui-org/card';
 
-export interface IconCardProps {
-  color: IconCardColors,
+export interface WithIconCardProps {
+  color: Colors,
   title: string,
   description: string,
   icon: Icon,
 }
 
-export enum IconCardColors {
+export enum Colors {
   Primary = 'bg-primary-500/25 text-primary-500 fill-primary-500',
   Secondary = 'bg-secondary-500/25 text-secondary-500 fill-secondary-500'
 }
 
-export function IconCard({ color, title, description, icon }: IconCardProps) {
+export function WithIconCard({ color, title, description, icon }: WithIconCardProps) {
   return (
     <Card className='select-none' isHoverable>
       <CardHeader className='px-5 pt-5 pb-0 flex items-center gap-4'>
