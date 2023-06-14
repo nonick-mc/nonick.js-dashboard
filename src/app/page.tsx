@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { HomeNavbar } from '@/components/navbar/navbar';
 import Footer from '@/components/footer/footer';
 import homePageConfig from '@/config/homePage';
+import { HomeNavbar } from '@/components/navbar/navbar';
 import { WithIconCard } from '@/components/card/withicon';
 import { ArrowRight, Book, MessageCircle, MoreHorizontal, Table } from 'react-feather';
 

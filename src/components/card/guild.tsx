@@ -8,17 +8,11 @@ import { Discord } from '@/utils/constants';
 import { hasPermission } from '@/utils/middlewares';
 import { Card, CardBody, CardHeader } from '@nextui-org/card';
 import React from 'react';
+import { getGuilds } from '@/utils/api/discord';
 
 async function getUserGuilds(accessToken: string): Promise<PartialGuild[]> {
-  const { data: userGuilds } = await axios.get<PartialGuild[]>(
-    `${Discord.API}/users/@me/guilds`,
-    { headers: { Authorization: `Bearer ${accessToken}` } },
-  );
-
-  const { data: botGuilds } = await axios.get<PartialGuild[]>(
-    `${Discord.API}/users/@me/guilds`,
-    { headers: { Authorization: `Bot ${process.env.DISCORD_CLIENT_TOKEN}` } },
-  );
+  const userGuilds = await getGuilds(`Bearer ${accessToken}`);
+  const botGuilds = await getGuilds(`Bot ${process.env.DISCORD_CLIENT_TOKEN}`);
 
   return userGuilds
     .filter((guild) => hasPermission(guild.permissions, Discord.Permissions.ManageGuild))
@@ -47,7 +41,7 @@ export async function AvailableGuildCards() {
 
 export function GuildCard({ id, name, icon }: Pick<PartialGuild, 'id'|'name'|'icon'>) {
   return (
-    <Link href={`/dashboard/guild/${id}`}>
+    <Link href={`/dashboard/${id}/home`}>
       <Card
         className='border-2'
         isPressable

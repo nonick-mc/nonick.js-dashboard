@@ -16,7 +16,9 @@ export function HomeNavbar() {
       isBlurred
     >
       <NavbarBrand>
-        <NoNICKjsLogo width={150} height={50} />
+        <Link href='/' passHref>
+          <NoNICKjsLogo width={150} height={50} />
+        </Link>
       </NavbarBrand>
       
       <NavbarContent justify='center' >
@@ -68,7 +70,7 @@ export function HomeNavbar() {
   );
 }
 
-export function DashboardNavbar() {
+export function DashboardNavbar({ isHideLogo }: { isHideLogo?: boolean }) {
   return (
     <NextUiNavbar
       className='py-2'
@@ -76,9 +78,12 @@ export function DashboardNavbar() {
       position='sticky'
       isBlurred
     >
-      <NavbarBrand>
-        <NoNICKjsLogo width={150} height={50} />
+      <NavbarBrand className={`${isHideLogo && 'hidden'}`}>
+        <Link href='/' passHref>
+          <NoNICKjsLogo width={150} height={50} />
+        </Link>
       </NavbarBrand>
+
       <NavbarContent className='items-center gap-2' justify='end'>
 
         <NavbarItem>
